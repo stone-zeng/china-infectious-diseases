@@ -1,5 +1,8 @@
 # 全国法定传染病疫情概况
 
+- 年度数据：[发病](data/yearly-cases.csv) / [死亡](data/yearly-deaths.csv)
+- 月度数据：[发病](data/monthly-cases.csv) / [死亡](data/monthly-deaths.csv)
+
 ## 数据来源
 
 <details>
