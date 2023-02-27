@@ -313,9 +313,10 @@
 - [2022年6月全国法定传染病疫情概况 (2022-07-29)](http://www.nhc.gov.cn/jkj/s3577/202207/d81b8cfb483a4165942acc1f63377039.shtml)
 - [2022年7月全国法定传染病疫情概况 (2022-08-19)](http://www.nhc.gov.cn/jkj/s3578/202208/f470f0abf544436d901c2660b06f3911.shtml)
 - [国家疾控局发布2022年8月全国法定传染病疫情概况 (2022-09-30)](http://www.nhc.gov.cn/xcs/fkdt/202209/3aa12c2c369a436e856d1340a54d92e8.shtml)
-- [2022年9月全国法定传染病疫情概况 (2022-10-31)](https://www.cdctj.com.cn/system/2022/11/12/030096581.shtml)
-- [2022年10月全国法定传染病疫情概况 (2022-12-01)](https://www.cdctj.com.cn/system/2022/12/01/030097706.shtml)
-- [2022年11月全国法定传染病疫情概况 (2022-12-28)](https://www.cdctj.com.cn/system/2022/12/28/030099083.shtml)
-- [2022年12月全国法定传染病疫情概况 (2023-01-29)](https://www.cdctj.com.cn/system/2023/01/29/030100553.shtml)
+- [2022年9月全国法定传染病疫情概况 (2022-10-28)](https://mp.weixin.qq.com/s/znXor1YuDC1aKY8FO-rpkQ)
+- [2022年10月全国法定传染病疫情概况 (2022-11-28)](https://mp.weixin.qq.com/s/wuN0a0lGaK3qWl9n6fm5aA)
+- [2022年11月全国法定传染病疫情概况 (2022-12-27)](https://mp.weixin.qq.com/s/nRQIVHGBtPdMk7qQMb2uyQ)
+- [2022年12月全国法定传染病疫情概况 (2023-01-29)](https://mp.weixin.qq.com/s/t8uHGtxW4uLQVEw7t3L4Kg)
+- [2023年1月全国法定传染病疫情概况 (2023-02-27)](https://mp.weixin.qq.com/s/MXB2ffpMKBl2oXZTiUCLaw)
 
 </details>
