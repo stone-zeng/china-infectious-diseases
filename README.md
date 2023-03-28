@@ -317,6 +317,10 @@
 - [2022年10月全国法定传染病疫情概况 (2022-11-28)](https://mp.weixin.qq.com/s/wuN0a0lGaK3qWl9n6fm5aA)
 - [2022年11月全国法定传染病疫情概况 (2022-12-27)](https://mp.weixin.qq.com/s/nRQIVHGBtPdMk7qQMb2uyQ)
 - [2022年12月全国法定传染病疫情概况 (2023-01-29)](https://mp.weixin.qq.com/s/t8uHGtxW4uLQVEw7t3L4Kg)
+
+#### 2023
+
 - [2023年1月全国法定传染病疫情概况 (2023-02-27)](https://mp.weixin.qq.com/s/MXB2ffpMKBl2oXZTiUCLaw)
+- [2023年2月全国法定传染病疫情概况 (2023-03-28)](https://mp.weixin.qq.com/s/BjNFgxIBmp1ln25GHqo2XA)
 
 </details>
