@@ -322,5 +322,7 @@
 
 - [2023年1月全国法定传染病疫情概况 (2023-02-27)](https://mp.weixin.qq.com/s/MXB2ffpMKBl2oXZTiUCLaw)
 - [2023年2月全国法定传染病疫情概况 (2023-03-28)](https://mp.weixin.qq.com/s/BjNFgxIBmp1ln25GHqo2XA)
+- [2023年3月全国法定传染病疫情概况 (2023-04-27)](https://mp.weixin.qq.com/s/_l6Z3nwHOgtS6rpsc5KENA)
+- [2023年4月全国法定传染病疫情概况 (2023-05-25)](https://mp.weixin.qq.com/s/3e_V6p1oJmv2UTDme54GGw)
 
 </details>
