@@ -326,5 +326,9 @@
 - [2023年4月全国法定传染病疫情概况 (2023-05-25)](https://mp.weixin.qq.com/s/3e_V6p1oJmv2UTDme54GGw)
 - [2023年5月全国法定传染病疫情概况 (2023-06-27)](https://mp.weixin.qq.com/s/w8XvfQlXcCQfda7KiIDx_g)
 - [2023年6月全国法定传染病疫情概况 (2023-07-24)](https://mp.weixin.qq.com/s/zi7vVlGEglKBWZtuIcgtOQ)
+- [2023年7月全国法定传染病疫情概况 (2023-08-25)](https://mp.weixin.qq.com/s/XWc5uLzGxvnW2gKdtBYGOQ)
+- [2023年8月全国法定传染病疫情概况 (2023-09-25)](https://mp.weixin.qq.com/s/Sv2ZBVz5n1Co0siLVSIWKw)
+- [2023年9月全国法定传染病疫情概况 (2023-10-23)](https://mp.weixin.qq.com/s/wdPfAmm6F0opJbWOdDVMZA)
+- [2023年10月全国法定传染病疫情概况 (2023-11-17)](https://mp.weixin.qq.com/s/5Cvfd2cfylMppFNYxHhRAw)
 
 </details>
