@@ -12,10 +12,10 @@
 · [<samp>2005</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/bb759f23a98a4ff680611f711182bf6a.shtml)
 · [<samp>2006</samp>](http://www.nhc.gov.cn/zwgkzt/wsbysj/200804/32967.shtml)
 · [<samp>2007</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/fa90d929d1d24af585234760f6e166ea.shtml)
-· [<samp>2009</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/c9244b1ae3ad48faa8181b87b8caffd5.shtml)
-· [<samp>2010</samp>](http://www.nhc.gov.cn/jkj/s3578/201002/8f762b4fc0a04305b5b75e27d6ffe5b8.shtml)
-· [<samp>2011</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/a96b7cf13027453f9d62ee8ce0b08a20.shtml)
-· [<samp>2012</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/addb40c9f2cc461b8d3bdb25871086ab.shtml)
+· [<samp>2008</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/c9244b1ae3ad48faa8181b87b8caffd5.shtml)
+· [<samp>2009</samp>](http://www.nhc.gov.cn/jkj/s3578/201002/8f762b4fc0a04305b5b75e27d6ffe5b8.shtml)
+· [<samp>2010</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/a96b7cf13027453f9d62ee8ce0b08a20.shtml)
+· [<samp>2011</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/addb40c9f2cc461b8d3bdb25871086ab.shtml)
 · [<samp>2012</samp>](http://www.nhc.gov.cn/jkj/s3578/201304/b540269c8e5141e6bb2d00ca539bb9f7.shtml)
 · [<samp>2013</samp>](http://www.nhc.gov.cn/jkj/s3578/201402/26700e8a83c04205913a106545069a11.shtml)
 · [<samp>2014</samp>](http://www.nhc.gov.cn/jkj/s3578/201502/847c041a3bac4c3e844f17309be0cabd.shtml)
@@ -297,8 +297,7 @@
 
 ## 数据说明
 
-- 自 2013 年 11 月 1 日起，人感染 H7N9 禽流感纳入乙类传染病进行管理
-- 自 2013 年 11 月 1 日起，甲型 H1N1 流感从乙类调整为丙类，并纳入现有流行性感冒进行管理
-- 自 2019 年 5 月 1 日起，结核性胸膜炎归入肺结核分类统计，不再报告到「其他法定管理以及重点监测传染病」中
-- 自 2020 年 1 月 20 日起，新型冠状病毒肺炎纳入乙类传染病管理
-- 自 2023 年 9 月 20 日起，猴痘纳入乙类传染病管理
+- 自 2013 年 11 月 1 日起，人感染 H7N9 禽流感纳入法定乙类传染病进行管理，甲型 H1N1 流感从乙类调整至丙类，并归并至流行性感冒进行统计。2013 年甲乙类传染病合计中包括 2013 年 1–10 月甲型 H1N1 流感报告发病数和死亡数。
+- 自 2019 年 5 月 1 日起，结核性胸膜炎归入肺结核分类统计，不再报告到「其他法定管理以及重点监测传染病」中。
+- 自 2020 年 1 月 20 日起，新型冠状病毒肺炎纳入乙类传染病管理。
+- 自 2023 年 9 月 20 日起，猴痘纳入乙类传染病管理。
