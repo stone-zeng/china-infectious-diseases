@@ -302,10 +302,13 @@
   · [<samp>09</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1848255166500679680.html)
   · [<samp>10</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1859039988831596544.html)
   · [<samp>11</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1868944491533684736.html)
+  · [<samp>12</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1879707944644890624.html)
+- <samp>2024</samp>:
+    [<samp>01</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1890318316888248320.html)
 
 ## 数据说明
 
 - 自 2013 年 11 月 1 日起，人感染 H7N9 禽流感纳入法定乙类传染病进行管理，甲型 H1N1 流感从乙类调整至丙类，并归并至流行性感冒进行统计。2013 年甲乙类传染病合计中包括 2013 年 1–10 月甲型 H1N1 流感报告发病数和死亡数。
 - 自 2019 年 5 月 1 日起，结核性胸膜炎归入肺结核分类统计，不再报告到「其他法定管理以及重点监测传染病」中。
-- 自 2020 年 1 月 20 日起，新型冠状病毒肺炎纳入乙类传染病管理。
+- 自 2020 年 1 月 20 日起，新型冠状病毒肺炎（新型冠状病毒感染）纳入乙类传染病管理。
 - 自 2023 年 9 月 20 日起，猴痘纳入乙类传染病管理。
