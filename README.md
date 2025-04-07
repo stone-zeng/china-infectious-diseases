@@ -305,6 +305,7 @@
   · [<samp>12</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1879707944644890624.html)
 - <samp>2024</samp>:
     [<samp>01</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1890318316888248320.html)
+  · [<samp>02</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1904362252617027584.html)
 
 ## 数据说明
 
