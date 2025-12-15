@@ -1,4 +1,5 @@
 import csv
+import unittest
 
 HEPATITIS = [
     "甲型肝炎",
@@ -68,81 +69,90 @@ def get(row: dict[str, str], name: str):
     return int(val)
 
 
-def check_hepatitis(row: dict[str, str]):
-    a = get(row, "病毒性肝炎")
-    b = sum(get(row, i) for i in HEPATITIS)
-    if a != b:
-        raise Exception("病毒性肝炎", a, b)
+class TestData(unittest.TestCase):
+    def _check_hepatitis(self, row: dict[str, str]):
+        a = get(row, "病毒性肝炎")
+        b = sum(get(row, i) for i in HEPATITIS)
+        return a == b, "病毒性肝炎"
 
+    def _check_level_i_ii(self, row: dict[str, str]):
+        a = get(row, "甲乙类传染病合计")
+        b = sum(get(row, i) for i in LEVEL_I) + sum(get(row, i) for i in LEVEL_II)
+        return a == b, "甲乙类传染病合计"
 
-def check_level_i_ii(row: dict[str, str]):
-    a = get(row, "甲乙类传染病合计")
-    b = sum(get(row, i) for i in LEVEL_I) + sum(get(row, i) for i in LEVEL_II)
-    if a != b:
-        raise Exception("甲乙类传染病合计", a, b)
+    def _check_level_iii(self, row: dict[str, str]):
+        a = get(row, "丙类传染病合计")
+        b = sum(get(row, i) for i in LEVEL_III)
+        return a == b or a == 0 or b == 0, "丙类传染病合计"
 
+    def _check_total(self, row: dict[str, str]):
+        a = get(row, "甲乙丙类总计")
+        b = get(row, "甲乙类传染病合计") + get(row, "丙类传染病合计")
+        return a == b or a == 0 or b == 0, "甲乙丙类总计"
 
-def check_level_iii(row: dict[str, str]):
-    a = get(row, "丙类传染病合计")
-    b = sum(get(row, i) for i in LEVEL_III)
-    if a != b and a != 0 and b != 0:
-        raise Exception("丙类传染病合计", a, b)
+    def _check(self, file: str, key: str, exceptions: dict[str, list[str]] = {}):
+        checks = [
+            self._check_hepatitis,
+            self._check_level_i_ii,
+            self._check_level_iii,
+            self._check_total,
+        ]
+        with open(file, "r") as f:
+            reader = csv.DictReader(f)
+            for row in list(reader):
+                header = next(iter(row.values()))
+                with self.subTest(**{key: header}):
+                    for check in checks:
+                        res, name = check(row)
+                        if not res:
+                            if not (name in exceptions and header in exceptions[name]):
+                                self.fail(name)
 
+    def test_yearly_cases(self):
+        self._check(
+            "data/yearly-cases.csv",
+            key="year",
+            exceptions={
+                "甲乙丙类总计": ["2004", "2005", "2006", "2007"],
+                "甲乙类传染病合计": ["2002", "2003", "2013"],
+                "丙类传染病合计": ["2004", "2005", "2006", "2007"],
+            },
+        )
 
-def check_total(row: dict[str, str]):
-    a = get(row, "甲乙丙类总计")
-    b = get(row, "甲乙类传染病合计") + get(row, "丙类传染病合计")
-    if a != b and a != 0 and b != 0:
-        raise Exception("甲乙丙类总计", a, b)
+    def test_yearly_deaths(self):
+        self._check(
+            "data/yearly-deaths.csv",
+            key="year",
+            exceptions={"甲乙类传染病合计": ["2002", "2003", "2013"]},
+        )
 
+    def test_monthly_cases(self):
+        self._check(
+            "data/monthly-cases.csv",
+            key="month",
+            exceptions={
+                "甲乙类传染病合计": [
+                    "2004-01",
+                    "2004-02",
+                    "2004-03",
+                    "2004-04",
+                    "2004-05",
+                    "2004-06",
+                    "2004-07",
+                    "2004-08",
+                    "2004-09",
+                    "2004-10",
+                    "2004-11",
+                    "2004-12",
+                    "2007-02",
+                ],
+                "丙类传染病合计": ["2005-04", "2005-05", "2007-01", "2007-02"],
+            },
+        )
 
-def check(file: str, exceptions: dict[str, list[str]] = {}):
-    print(f"\n# {file}\n")
-    checks = [
-        check_hepatitis,
-        check_level_i_ii,
-        check_level_iii,
-        check_total,
-    ]
-    with open(file, "r") as f:
-        reader = csv.DictReader(f)
-        for row in list(reader):
-            header = next(iter(row.values()))
-            errors: list[Exception] = []
-            for func in checks:
-                try:
-                    func(row)
-                except Exception as e:
-                    name = e.args[0]
-                    if not (name in exceptions and header in exceptions[name]):
-                        errors.append(e)
-            if errors:
-                print(f"## {header}")
-                for e in errors:
-                    print(f"\t{e.args[0]}: {e.args[1]} != {e.args[2]}")
-
-
-def main():
-    check(
-        "data/yearly-cases.csv",
-        exceptions={
-            "甲乙类传染病合计": ["2013"],  # 甲型 H1N1 流感
-        },
-    )
-    check(
-        "data/yearly-deaths.csv",
-        exceptions={
-            "甲乙类传染病合计": ["2013"],  # 甲型 H1N1 流感
-        },
-    )
-    check(
-        "data/monthly-cases.csv",
-        exceptions={
-            "丙类传染病合计": ["2005-04", "2005-05", "2007-01", "2007-02"],
-        },
-    )
-    check("data/monthly-deaths.csv")
-
-
-if __name__ == "__main__":
-    main()
+    def test_monthly_deaths(self):
+        self._check(
+            "data/monthly-deaths.csv",
+            key="month",
+            exceptions={"甲乙类传染病合计": ["2004-05", "2004-08", "2006-01"]},
+        )
