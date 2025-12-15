@@ -27,6 +27,7 @@
 · [<samp>2020</samp>](http://www.nhc.gov.cn/jkj/s3578/202103/f1a448b7df7d4760976fea6d55834966.shtml)
 · [<samp>2021</samp>](http://www.nhc.gov.cn/jkj/s3578/202204/4fd88a291d914abf8f7a91f6333567e1.shtml)
 · [<samp>2023</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1836299733133275136.html)
+· [<samp>2024</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1998217472895258624.html)
 
 ### 月度数据
 
@@ -312,6 +313,9 @@
   · [<samp>06</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1941024811541499904.html)
   · [<samp>07</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1952913634768621568.html)
   · [<samp>08</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1963855822880935936.html)
+  · [<samp>09</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1976561324014342144.html)
+  · [<samp>10</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1986247921412509696.html)
+  · [<samp>11</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_1996489635242872832.html)
 
 ## 数据说明
 
