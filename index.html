@@ -155,7 +155,14 @@
       document.getElementById("csvSelect").onchange = () =>
         plotDataWithLayout(document.getElementById("logY").checked);
       document.getElementById("logY").onchange = function () {
-        plotDataWithLayout(this.checked);
+        const plot = document.getElementById("plot");
+        if (!plot.data || plot.data.length === 0) {
+          plotDataWithLayout(this.checked);
+          return;
+        }
+        Plotly.relayout("plot", {
+          "yaxis.type": this.checked ? "log" : "linear",
+        });
       };
       document.addEventListener("DOMContentLoaded", async () => {
         await fetchLastCommitDate();
