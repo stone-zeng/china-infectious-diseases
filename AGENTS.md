@@ -1,16 +1,48 @@
-# Agents
+# Update Data Agent
 
-## Update Data Agent
+Fetch website content and update dataset files.
 
-Fetch the website content and update data files.
+## Instructions
 
-**Instructions:**
+- The input month will be in the format `YYYY-MM`.
+- Map the month to the corresponding URL using `README.md`.
+- Fetch the webpage (static HTML only, no JS execution).
+- Extract data from the main table on the page.
 
-- You should identify the website url from the input month. I have listed the urls for each month in `README.md` file.
-- Fetch the content from the website.
-- Parse the data from the website content.
-- Update the corresponding data files (`monthly-cases.csv` and `monthly-deaths.csv` for monthly data and `yearly-cases.csv` and `yearly-deaths.csv` for yearly data) in the `data/` folder. Do not use Python; instead, update the files directly.
-- If you find some columns are missing in the data files, stop and inform me about the missing columns.
-- Avoid running any code or scripts. Only update the data files directly.
-- After updating the data files, run the unit tests using the `runTests` tool (with `check.py` as the test file) to verify the changes.
-- Tell me the changes you made to the data files and the test results.
+## Data Update Rules
+
+- Update as needed:
+  - `data/monthly-cases.csv`
+  - `data/monthly-deaths.csv`
+  - `data/yearly-cases.csv`
+  - `data/yearly-deaths.csv`
+- If the month already exists → update the row
+- If not → append a new row
+- Keep rows sorted by date (ascending)
+- Do NOT:
+  - change column order
+  - introduce new columns
+  - write non-numeric values into numeric fields
+
+## Validation
+
+- If the website contains columns not present in CSV → STOP and report
+- If required columns are missing in CSV → STOP and report
+- If fetching/parsing fails → STOP and report
+
+## Execution Constraints
+
+- Do NOT write or run custom scripts (Python, Bash, etc.)
+- You MAY use the `runTests` tool
+
+## Final Step
+
+- Run tests using `runTests` with `check.py` (`python3 -m unittest -v check`)
+
+## Output
+
+Report:
+
+1. Files updated
+2. Rows added/modified
+3. Test results

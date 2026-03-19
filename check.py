@@ -58,6 +58,17 @@ LEVEL_III = [
     "手足口病",
     "其他感染性腹泻病",
 ]
+LEVEL_IV = [
+    "中东呼吸综合征（MERS）",
+    "埃博拉出血热",
+    "寨卡病毒病",
+    "基孔肯雅热",
+    "拉沙热",
+    "水痘",
+    "肝吸虫病",
+    "人感染猪链球菌病",
+    "发热伴血小板减少综合征",
+]
 
 
 def get(row: dict[str, str], name: str):
@@ -71,30 +82,41 @@ def get(row: dict[str, str], name: str):
 
 class TestData(unittest.TestCase):
     def _check_hepatitis(self, row: dict[str, str]):
-        a = get(row, "病毒性肝炎")
+        name = "病毒性肝炎"
+        a = get(row, name)
         b = sum(get(row, i) for i in HEPATITIS)
-        return a == b, "病毒性肝炎"
+        return a == b, name
 
     def _check_level_i_ii(self, row: dict[str, str]):
-        a = get(row, "甲乙类传染病合计")
+        name = "甲乙类传染病合计"
+        a = get(row, name)
         b = sum(get(row, i) for i in LEVEL_I) + sum(get(row, i) for i in LEVEL_II)
-        return a == b, "甲乙类传染病合计"
+        return a == b, name
 
     def _check_level_iii(self, row: dict[str, str]):
-        a = get(row, "丙类传染病合计")
+        name = "丙类传染病合计"
+        a = get(row, name)
         b = sum(get(row, i) for i in LEVEL_III)
-        return a == b or a == 0 or b == 0, "丙类传染病合计"
+        return a == b or a == 0 or b == 0, name
+
+    def _check_level_iv(self, row: dict[str, str]):
+        name = "重点监测其他传染病合计"
+        a = get(row, name)
+        b = sum(get(row, i) for i in LEVEL_IV)
+        return a == b or a == 0 or b == 0, name
 
     def _check_total(self, row: dict[str, str]):
-        a = get(row, "甲乙丙类总计")
+        name = "甲乙丙类总计"
+        a = get(row, name)
         b = get(row, "甲乙类传染病合计") + get(row, "丙类传染病合计")
-        return a == b or a == 0 or b == 0, "甲乙丙类总计"
+        return a == b or a == 0 or b == 0, name
 
     def _check(self, file: str, key: str, exceptions: dict[str, list[str]] = {}):
         checks = [
             self._check_hepatitis,
             self._check_level_i_ii,
             self._check_level_iii,
+            self._check_level_iv,
             self._check_total,
         ]
         with open(file, "r") as f:
