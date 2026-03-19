@@ -319,7 +319,7 @@
   · [<samp>12</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2009510384572469248.html)
 - <samp>2026</samp>:
     [<samp>01</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2020779043559215104.html)
-    [<samp>02</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2031644539913408512.html)
+  · [<samp>02</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2031644539913408512.html)
 
 ## 数据说明
 
@@ -327,3 +327,4 @@
 - 自 2019 年 5 月 1 日起，结核性胸膜炎归入肺结核分类统计，不再报告到「其他法定管理以及重点监测传染病」中。
 - 自 2020 年 1 月 20 日起，新型冠状病毒肺炎（新型冠状病毒感染）纳入乙类传染病管理。
 - 自 2023 年 9 月 20 日起，猴痘纳入乙类传染病管理。
+- 自 2026 年 1 月起，重点监测的其他传染病纳入公布。
