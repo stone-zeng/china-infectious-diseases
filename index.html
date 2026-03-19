@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>全国法定传染病疫情概况</title>
-    <script src="https://cdn.plot.ly/plotly-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/plotly.js@3.4.0/dist/plotly.min.js"></script>
     <style>
       body {
         font-family: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -44,12 +44,15 @@
     <div id="plot"></div>
     <div class="controls">
       <select id="csvSelect">
-        <option value="yearly-cases.csv">年度发病数据</option>
-        <option value="yearly-deaths.csv">年度死亡数据</option>
         <option value="monthly-cases.csv">月度发病数据</option>
         <option value="monthly-deaths.csv">月度死亡数据</option>
+        <option value="yearly-cases.csv">年度发病数据</option>
+        <option value="yearly-deaths.csv">年度死亡数据</option>
       </select>
-      <label><input type="checkbox" id="logY" /> 对数坐标</label>
+      <label>
+        <input type="checkbox" id="logY" />
+        对数坐标
+      </label>
     </div>
     <div class="github-link-container">
       <a
@@ -77,10 +80,20 @@
       const githubBase =
         "https://raw.githubusercontent.com/stone-zeng/china-infectious-diseases/refs/heads/main/data/";
       const visibleFields = [
-        "甲乙丙类总计",
+        "甲乙丙类传染病总计",
         "甲乙类传染病合计",
         "丙类传染病合计",
+        "重点监测其他传染病合计",
       ];
+      const dashes = { 甲乙类: "solid", 丙类: "dash", 其他: "dot" };
+      let lastUpdated = "";
+      async function fetchLastCommitDate() {
+        try {
+          const res = await fetch("https://api.github.com/repos/stone-zeng/china-infectious-diseases/commits?per_page=1");
+          const data = await res.json();
+          lastUpdated = data[0].commit.committer.date.slice(0, 10);
+        } catch (e) {}
+      }
       async function plotDataWithLayout(logY) {
         const file = document.getElementById("csvSelect").value;
         const url = githubBase + file;
@@ -92,17 +105,28 @@
           complete: (results) => {
             const fields = results.meta.fields;
             const x = results.data.map((row) => row[fields[0]]);
-            const data = fields.slice(1).map((field, index) => ({
-              x: x,
-              y: results.data.map((row) => parseInt(row[field])),
-              name: field,
-              type: "scatter",
-              mode: "lines+markers",
-              visible: visibleFields.includes(field) ? true : "legendonly",
-              legendgroup: index <= 38 ? "group1" : "group2",
-            }));
+            const groupOf = (index) => index <= 39 ? "甲乙类" : index <= 51 ? "丙类" : "其他";
+            const data = fields.slice(1).map((field, index) => {
+              const group = groupOf(index);
+              const isTotal = field === "甲乙丙类传染病总计";
+              return {
+                x: x,
+                y: results.data.map((row) => parseInt(row[field])),
+                name: field,
+                type: "scatter",
+                mode: "lines+markers",
+                visible: visibleFields.includes(field) ? true : "legendonly",
+                legendgroup: group,
+                line: { dash: dashes[group], ...(isTotal && { color: "gray" }) },
+                ...(isTotal && { marker: { color: "gray" } }),
+              };
+            });
             const layout = {
-              title: { text: "全国法定传染病疫情概况", font: { size: 24 } },
+              title: {
+                text: "全国法定传染病疫情概况",
+                font: { size: 24 },
+                ...(lastUpdated && { subtitle: { text: `更新于 ${lastUpdated}` } }),
+              },
               xaxis: {
                 title: { text: "日期" },
                 type: "date",
@@ -116,7 +140,7 @@
               },
               autosize: true,
               legend: {
-                orientation: "h",
+                orientation: "v",
                 groupclick: "toggleitem",
                 x: 1,
                 xanchor: "left",
@@ -133,8 +157,9 @@
       document.getElementById("logY").onchange = function () {
         plotDataWithLayout(this.checked);
       };
-      document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("csvSelect").value = "yearly-cases.csv";
+      document.addEventListener("DOMContentLoaded", async () => {
+        await fetchLastCommitDate();
+        document.getElementById("csvSelect").value = "monthly-cases.csv";
         plotDataWithLayout(false);
       });
     </script>
