@@ -45,6 +45,10 @@ LEVEL_II = [
     "血吸虫病",
     "疟疾",
 ]
+LEVEL_II_FROM_2026_04 = [
+    "基孔肯雅热",
+    "发热伴血小板减少综合征",
+]
 LEVEL_III = [
     "流行性感冒",
     "流行性腮腺炎",
@@ -91,6 +95,8 @@ class TestData(unittest.TestCase):
         name = "甲乙类传染病合计"
         a = get(row, name)
         b = sum(get(row, i) for i in LEVEL_I) + sum(get(row, i) for i in LEVEL_II)
+        if next(iter(row.values())) >= "2026-04":
+            b += sum(get(row, i) for i in LEVEL_II_FROM_2026_04)
         return a == b, name
 
     def _check_level_iii(self, row: dict[str, str]):
@@ -102,7 +108,10 @@ class TestData(unittest.TestCase):
     def _check_level_iv(self, row: dict[str, str]):
         name = "重点监测其他传染病合计"
         a = get(row, name)
-        b = sum(get(row, i) for i in LEVEL_IV)
+        if next(iter(row.values())) >= "2026-04":
+            b = sum(get(row, i) for i in LEVEL_IV if i not in LEVEL_II_FROM_2026_04)
+        else:
+            b = sum(get(row, i) for i in LEVEL_IV)
         return a == b or a == 0 or b == 0, name
 
     def _check_total(self, row: dict[str, str]):

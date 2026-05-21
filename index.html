@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -85,11 +85,18 @@
         "丙类传染病合计",
         "重点监测其他传染病合计",
       ];
-      const dashes = { 甲乙类: "solid", 丙类: "dash", 其他: "dot" };
+      const dashes = {
+        总计: "solid",
+        甲乙类: "solid",
+        丙类: "dash",
+        其他: "dot",
+      };
       let lastUpdated = "";
       async function fetchLastCommitDate() {
         try {
-          const res = await fetch("https://api.github.com/repos/stone-zeng/china-infectious-diseases/commits?per_page=1");
+          const res = await fetch(
+            "https://api.github.com/repos/stone-zeng/china-infectious-diseases/commits?per_page=1",
+          );
           const data = await res.json();
           lastUpdated = data[0].commit.committer.date.slice(0, 10);
         } catch (e) {}
@@ -105,7 +112,15 @@
           complete: (results) => {
             const fields = results.meta.fields;
             const x = results.data.map((row) => row[fields[0]]);
-            const groupOf = (index) => index <= 39 ? "甲乙类" : index <= 51 ? "丙类" : "其他";
+            const levelIAndIIEndIndex = fields.indexOf("丙类传染病合计") - 2;
+            const levelIIIEndIndex =
+              fields.indexOf("重点监测其他传染病合计") - 2;
+            const groupOf = (index) =>
+              index <= levelIAndIIEndIndex
+                ? "甲乙类"
+                : index <= levelIIIEndIndex
+                  ? "丙类"
+                  : "其他";
             const data = fields.slice(1).map((field, index) => {
               const group = groupOf(index);
               const isTotal = field === "甲乙丙类传染病总计";
@@ -117,7 +132,10 @@
                 mode: "lines+markers",
                 visible: visibleFields.includes(field) ? true : "legendonly",
                 legendgroup: group,
-                line: { dash: dashes[group], ...(isTotal && { color: "gray" }) },
+                line: {
+                  dash: dashes[group],
+                  ...(isTotal && { color: "gray" }),
+                },
                 ...(isTotal && { marker: { color: "gray" } }),
               };
             });
@@ -125,7 +143,9 @@
               title: {
                 text: "全国法定传染病疫情概况",
                 font: { size: 24 },
-                ...(lastUpdated && { subtitle: { text: `更新于 ${lastUpdated}` } }),
+                ...(lastUpdated && {
+                  subtitle: { text: `更新于 ${lastUpdated}` },
+                }),
               },
               xaxis: {
                 title: { text: "日期" },

@@ -321,6 +321,7 @@
     [<samp>01</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2020779043559215104.html)
   · [<samp>02</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2031644539913408512.html)
   · [<samp>03</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2042408485003890688.html)
+  · [<samp>04</samp>](https://www.ndcpa.gov.cn/jbkzzx/c100016/common/content/content_2054121444713336832.html)
 
 ## 数据说明
 
@@ -329,3 +330,4 @@
 - 自 2020 年 1 月 20 日起，新型冠状病毒肺炎（新型冠状病毒感染）纳入乙类传染病管理。
 - 自 2023 年 9 月 20 日起，猴痘纳入乙类传染病管理。
 - 自 2026 年 1 月起，重点监测的其他传染病纳入公布。
+- 自 2026 年 4 月 1 日起，基孔肯雅热和发热伴血小板减少综合征纳入乙类传染病管理。
